@@ -1,21 +1,8 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 
 
-//import 'Port.dart';
-
-// Uncomment lines 7 and 10 to view the visual layout at runtime.
-//import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
-/*
-void main() {
-  //debugPaintSizeEnabled = true;
-  runApp(MyApp());
-}
-*/
-class MyAppCont extends StatelessWidget {
+class PortPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,24 +10,23 @@ class MyAppCont extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: PortPageDisp(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
-
+class PortPageDisp extends StatefulWidget {
+  PortPageDisp({Key key}) : super(key: key);
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  PortPageState createState() => new PortPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
+
+class PortPageState extends State<PortPageDisp> {
+ @override
   Widget build(BuildContext context) {
-    var container = Container(
+    var portcontainer = Container(
       decoration: BoxDecoration(
         color: Colors.black26,
       ),
@@ -63,12 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: new EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      Image.asset(
-                        'images/japan2.png',
-                        height: 20.0,
-                        fit: BoxFit.cover,
-                      ),
-                      Text(
+                     Text(
                         "  Nikkei225",
                         style: TextStyle(fontSize: 12.0, color: Colors.red),
                       ),
@@ -76,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ), // Image.asset('images/pic1.jpg'),
                 ),
               ),
+              /*
               Expanded(
                 //1行2桁目
                 child: Container(
@@ -134,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: new EdgeInsets.all(8.0),
                   child: Text("2行目2桁12345"),
                 ),
-              ),
+              ),*/
             ],
           ),
         ],
@@ -150,8 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(
           children: [
             
-            container,
-            //portcontainer,
+            portcontainer,
             //titleSection,
             //buttonSection,
             //textSection,
@@ -159,5 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+
+    
   }
 }
